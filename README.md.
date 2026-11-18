@@ -1,0 +1,43 @@
+# FixMyCampus – Campus Complaint Analytics System
+
+## About the Project
+FixMyCampus is a web-based complaint management system developed using Python, Flask, and MongoDB. It helps students submit campus-related complaints and allows administrators to manage and track complaint status.
+
+## Features
+- Student complaint submission
+- Complaint tracking
+- Admin login
+- Admin dashboard
+- Update complaint status
+- Manage campus complaints
+- MongoDB database integration
+
+## Technologies Used
+- Python
+- Flask
+- MongoDB
+- HTML
+- CSS
+
+## Project Structure
+```text
+FixMyCampus/
+├── app.py
+├── requirements.txt
+├── templates/
+└── static/
+```
+
+## How to Run
+1. Install Python.
+2. Install dependencies:
+   `pip install -r requirements.txt`
+3. Start MongoDB.
+4. Run the application:
+   `python app.py`
+5. Open `http://127.0.0.1:5000/` in your browser.
+
+## Developer
+Sneha Fugare
+
+GitHub: https://github.com/SnehaF21
