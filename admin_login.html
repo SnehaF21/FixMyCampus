@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Admin Login | FixMyCampus{% endblock %}{% block content %}
+<section class="login panel"><p class="eyebrow">RESTRICTED ACCESS</p><h1>Admin sign in</h1><p class="muted">Sign in to manage campus complaints.</p>
+<form method="post" action="{{ url_for('admin_login') }}"><label for="username">Username</label><input id="username" name="username" autocomplete="username" required>
+<label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required>
+<button class="primary fullbtn" type="submit">Sign in →</button></form><p class="muted small">Local default: username <code>admin</code>, password <code>ChangeMe123!</code>. Change these before deployment.</p></section>{% endblock %}
