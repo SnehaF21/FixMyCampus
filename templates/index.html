@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block title %}Student Portal | FixMyCampus{% endblock %}{% block content %}
+<section class="hero"><p class="eyebrow">STUDENT PORTAL</p><h1>Make your campus better, together.</h1><p>Report campus issues and follow their progress.</p></section>
+<section class="panel"><h2>Submit a complaint</h2><form method="post" action="{{ url_for('add_complaint') }}"><div class="grid">
+<div><label for="name">Student name *</label><input id="name" name="name" required maxlength="100"></div>
+<div><label for="title">Complaint title *</label><input id="title" name="title" required maxlength="150"></div>
+<div><label for="category">Category *</label><select id="category" name="category" required><option value="">Choose category</option>{% for item in categories %}<option>{{ item }}</option>{% endfor %}</select></div>
+<div><label for="department">Department *</label><select id="department" name="department" required><option value="">Choose department</option>{% for item in departments %}<option>{{ item }}</option>{% endfor %}</select></div>
+<div class="wide"><label for="location">Campus location *</label><input id="location" name="location" required maxlength="150" placeholder="e.g. Main building, Room 204"></div>
+<div class="wide"><label for="description">Description *</label><textarea id="description" name="description" rows="4" required maxlength="3000"></textarea></div>
+</div><button class="primary" type="submit">Submit complaint →</button></form></section>
+<section class="panel"><h2>Recent complaint status</h2>{% if complaints %}<div class="scroll"><table><thead><tr><th>Complaint</th><th>Category</th><th>Department</th><th>Location</th><th>Status</th></tr></thead><tbody>{% for c in complaints %}<tr><td>{{ c.get('title','Untitled') }}</td><td>{{ c.get('category','Other') }}</td><td>{{ c.get('department','Not assigned') }}</td><td>{{ c.get('location','Not specified') }}</td><td><span class="status">{{ c.get('status','Pending') }}</span></td></tr>{% endfor %}</tbody></table></div><p class="muted">Student names and descriptions are hidden from this public list.</p>{% else %}<p class="muted">No complaints have been submitted yet.</p>{% endif %}</section>{% endblock %}
